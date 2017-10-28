@@ -1,0 +1,76 @@
+File Manifest for ICPSR 3212
+
+White, Jacquelyn W., University of North Carolina-Greensboro, and John A.
+Humphrey. Longitudinal Study of Violence Against Women: Victimization and
+Perpetration Among College Students in a State-Supported University in the
+United States, 1990-1995. ICPSR03212-v1. Ann Arbor, MI: Inter-university
+Consortium for Political and Social Research [distributor], 2002.
+http://doi.org/10.3886/ICPSR03212.v1
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03212-descriptioncitation.pdf       -       -         -       2017-04-03  -
+
+    03212-related_literature.txt        -       -         -       daily       -
+
+    03212-manifest.txt                  -       -         -       daily       -
+
+    03212-User_guide.pdf                -       -         -       2002-05-24  e7643f9c835865067e2d4cf782a8df0d
+
+
+DS0001 Female Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03212-0001-Codebook.pdf             -       -         -       2002-05-24  87dafb5f90bb4238ee3daaf23cbd403b
+
+    03212-0001-Data.por                 -       1,580     2075    2005-03-10  e91102d715f550f3bec42fe57bc1df99
+
+    03212-0001-Data.txt                 2718    1,580     2075    2002-05-24  67f3d34fa7b44d9588ea4bef901057b5
+
+    03212-0001-Data.xpt                 -       1,580     2075    2005-03-10  07e32388531153bb4838bac1497a00ea
+
+    03212-0001-Setup.sas                -       -         -       2002-05-24  d0a3124e35bcf93a26be75d2af49a8c8
+
+    03212-0001-Setup.sps                -       -         -       2002-05-24  dc67ab8eb1553a100e29e1fc1eb3f6b5
+
+    03212-0001-Supplemental_syntax.sas  -       -         -       2005-03-10  a11dec7a7bc4a78f49a18f63faa320c9
+
+
+DS0002 Male Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03212-0002-Codebook.pdf             -       -         -       2015-09-11  b3813c3a837f667486d75503c19f4a53
+
+    03212-0002-Data.por                 -       851       2512    2005-03-10  c780c0efc9107575bb3e341181be2ca5
+
+    03212-0002-Data.txt                 2985    851       2512    2002-05-24  b028d82e508264f73be477b8d985ed59
+
+    03212-0002-Data.xpt                 -       851       2512    2005-03-10  a9f02fabe5ef30361e3b7532c9a9f508
+
+    03212-0002-Setup.sas                -       -         -       2002-05-24  2f8a417ce673aba1c8a21f2688d7d514
+
+    03212-0002-Setup.sps                -       -         -       2002-05-24  b9ef02455753305ee8de76e8af9ddd40
+
+    03212-0002-Supplemental_syntax.sas  -       -         -       2005-03-10  45026fd78b65695a92db083d6c1b12cd
+
+
+Version History
+
+2015-09-11 Codebook for Male Data was updated to address some labeling
+issues.  2006-03-30 File UG3212.ALL.PDF was removed from any previous
+datasets and flagged as a study-level file, so that it will accompany all
+downloads.  2005-11-04  On 2005-03-14 new files were added to one or  more
+datasets.  These files included additional setup files as well as one or
+more of the following: SAS  program, SAS transport, SPSS portable, and
+Stata system files. The  metadata record was revised  2005-11-04 to reflect
+these additions.

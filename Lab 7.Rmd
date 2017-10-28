@@ -1,0 +1,32 @@
+---
+title: "Lab 7 - Version Control & Git"
+author: "Snow Christensen"
+date: "October 27, 2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+*Similar to the previous lab, the aim of the following exercises is to help you get version control (Git) up and running with the current state of your poster project. Part of your final poster project grade will be based on the state of your project on GitHub so learning how to interact with Git & GitHub in R Studio is something you should continue doing throughout the rest of the quarter. The last slide of the lecture on Version Control and Git contains resources that will help you to continue learning about Git and GitHub.*
+
+
+1. If you don't already have Git installed on your computer, download it by following the link that corresponds to your operating system and complete the installation process (2 points): 
+
+- [**Mac**](https://git-scm.com/download/mac)
+- [**PC**](https://git-scm.com/downloads/win)
+- [**Linux**](https://git-scm.com/downloads/linux)
+
+2. Configure your git username and email by opening your terminal/shell window and typing `git config --global user.name "Your name"` and hiting enter. Do the same with `git config --global user.email "UW email address"` and hitting enter. This configures git and associates your git activity with you so any changes pushed to GitHub in the future will include this information. You can check to see that this was done correctly by typing `git config --list` and scrolling down to the last two entries. (3 points)
+
+3. Initialize your R Studio Project directory (that you created for your poster project in the last lab) to use Git. To do this go to **Tools** --> **Project Options** and select the **Git/SVN** tab. Then change the version control system from *None* to *Git*. You will be prompted to restart R Studio and once you have you should see a new Git tab in the Environments pane and your project now has a Git drop-down menu at the top of the IDE. (3 points)
+
+4. Commit any files, datasets, output that you want to track as part of your official project. (4 points)
+
+5. Set up a GitHub account at https://github.com using your UW email address (i.e. the same one you associated with Git for question 2). Don't worry about SSH keys for now. (2 points)
+
+6. Create a new repository on GitHub for your poster project. Give your repository the same name as your project, describe it, and click submit. Follow the instructions on the next GitHub page to sync your R Studio project with your new GitHub repository. (4 points) 
+
+7. Push the local version of your project to GitHub and check the hosted repository on GitHub to make sure the changes were made. (2 points)
+
+8. Send me your GitHub username on Canvas so I can see your public project repository. Be sure to let me know if you didn't include data for privacy reasons. 
+
