@@ -12,8 +12,13 @@ Using your own dataset (which may include more than one table) carry out the fol
 **Before you begin: as many of you have large datasets, you're going to want to select only the variables you're interested in utilizing for this project (ideally no more than twenty columns but perhaps much smaller) so you don't have R Studio's memory working on the entire dataset. The example code provided below can be modified to allow you to subset your data to only the variables you wish to use. First, read in your complete dataset and save it as** `data`. **Then, add the names of the variables you wish to use for your poster project to the** `select` **function, separated by commas. Run the two lines of code to save this new, smaller version of your data to** `data_subset`. **Use this smaller dataset to complete the rest of the lab**
 
 ```{r}
-# set working directory
-setwd()
+#load package for using select() function
+library("dplyr")
+
+#load package for using "%%" function
+install.packages("magrittr")
+library("magrittr")
+
 #load package for reading .por file
 # install.packages("haven")
 library("haven")
@@ -159,13 +164,13 @@ Yes, any missing values are coded as 0 for "No Response."
 PLEASEnumeric <- as.numeric(data_subset$PLEASE)
 
 #create a boxplot for the PLEASE variable
-boxplot(PLEASEnumeric, labels=rownames(PLEASE), main = "Distribution of PLEASE Variable", horizontal = TRUE, xlab = "Value") 
+boxplot(PLEASEnumeric, main = "Distribution of PLEASE Variable", horizontal = TRUE, xlab = "Value") 
 
 # convert the AUTHSI variable to a numeric so it can be read into a boxplot
 AUTHSInumeric <- as.numeric(data_subset$AUTHSI)
 
 # create a boxplot for the AUTHSI variable
-boxplot(AUTHSInumeric, labels=rownames(AUTHSI), main = "Distribution of AUTHSI Variable", horizontal = TRUE, xlab = "Value") 
+boxplot(AUTHSInumeric, main = "Distribution of AUTHSI Variable", horizontal = TRUE, xlab = "Value") 
 
 ```
 For both variables there are obvious outliers. These do not seem like errors because the responses could have just been different for very specific cases. However, I do need to be careful to make sure the outliers do not skew the analysis too much which is why I need to use the most appropriate measure of center, such as the mode. 
