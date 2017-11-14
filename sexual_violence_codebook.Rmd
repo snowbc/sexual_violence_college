@@ -1,0 +1,149 @@
+---
+title: "sexual_violence_codebook"
+author: "Snow Christensen"
+date: "November 7, 2017"
+output: pdf_document
+---
+
+
+
+## Study Design ##
+The study was a longitudinal study of women and men in stats-supported universities completed over the course of five years with the same respondents in two different cohorts. It is a qualitative study that had respondents complete one survey in groups at the beginning of the year and then a follow up survey at the end of the year. For this analysis I will be using the female data from the first survey about the respondents' experiences of sexual assault from 14-18 years old and what kind of person they think they are. 
+
+## Sampling ##
+This was conducted using a convenience sample of men and women of the undergraduate classes of 1990-1995. For the specific survey I am analyzing they had an 83% response rate.
+
+## Variable Index ##
+
+
+```{r, echo = FALSE, message = FALSE}
+#install.packages("knitr")
+library("knitr")
+# Loading libraries
+#install.packages("memisc", repos="https://CRAN.R-project.org/package=memisc")
+library("memisc")
+library("tidyverse")
+library("haven")
+library("dplyr")
+
+# Read in data
+data <- haven::read_por("~/Projects/sexual_violence_college/ICPSR_03212/DS0001/03212-0001-Data.por")
+
+data <- as_tibble(data)
+
+#create data subset I want to use
+data_condensed <- data %>% 
+  dplyr::select(RACE, NOASSERT, PLEASE,  AUTHSI, PRESSSI)
+
+#convert columns to character
+data_condensed$RACE <- as.character(data_condensed$RACE)
+
+data_condensed$NOASSERT<- as.character(data_condensed$NOASSERT)
+
+data_condensed$PLEASE <- as.character(data_condensed$PLEASE)
+
+data_condensed$AUTHSI <- as.character(data_condensed$AUTHSI)
+
+data_condensed$PRESSSI <- as.character(data_condensed$PRESSSI)
+
+
+```
+
+```{r}
+data_set <- data.set(
+                     RACE = sample(data_condensed$RACE),
+                     NOASSERT = sample(data_condensed$NOASSERT),
+                     PLEASE = sample(data_condensed$PLEASE),
+                     AUTHSI = sample(data_condensed$AUTHSI),
+                     PRESSSI = sample(data_condensed$PRESSSI)
+                     )
+
+# Look at new data.set object
+data_set
+
+# Creating variable index for data_set
+data_set <- within(data_set,{
+  # Description of the variables
+  description(RACE) <-"What was the race of the person?"
+  description(NOASSERT) <- "I stay in the background and let other people tell me what to do."
+  description(PLEASE) <- "I try to please people and make them like me by giving in to them."
+  description(AUTHSI) <- "Intercourse because of authority."
+  description(PRESSSI) <- "Intercourse because of pressure."
+  
+  # Wording of survey item/interview questions
+  wording(RACE) <- "What is your race or ethnic background?"
+  wording(NOASSERT) <- "The questions below ask you to say what kind of a person you think you are. For example, here is a statement: 'I watch TV all the time.' If you watch TV all the time, that sentence is very much like you. If you watch TV a lot, then the sentence is mostly like you. Or you may watch TV only a little bit--then the sentence is a little like you."
+  wording(PLEASE) <- "The questions below ask you to say what kind of a person you think you are. For example, here is a statement: 'I watch TV all the time.' If you watch TV all the time, that sentence is very much like you. If you watch TV a lot, then the sentence is mostly like you. Or you may watch TV only a little bit--then the sentence is a little like you."
+  wording(AUTHSI) <- "Have you engaged in sexual intercourse when you didn't want to because a male used his position of authority (boss, teacher, camp counselor, supervisor) to make you?"
+  wording(PRESSSI) <- "Have you given in to sexual intercourse when you didn't want to because you were overwhelmed by a male's continual arguments and pressure?"
+
+  
+  # type of measurement
+  measurement(RACE) <- "nominal"
+  measurement(NOASSERT) <- "nominal"
+  measurement(PLEASE) <- "nominal"
+  measurement(AUTHSI) <- "nominal"
+  measurement(PRESSSI) <- "nominal"
+
+  
+  # labels associated with underlying numeric
+  labels(RACE) <- c(
+    "No response"                                   =  0,
+    "White"                                         =  1,
+    "Black"                                         =  2,
+    "Other"                                         =  3,
+    "Missing"                                       =  9)
+  
+  labels(NOASSERT) <- c(
+    "No response"                                   =  0,
+    "Not at all like me"                            =  1,
+    "A little like me"                              =  2,
+    "Somewhat like me"                              =  3,
+    "Mostly like me"                                =  4,
+    "Very much like me"                             =  5,
+    "Missing"                                       =  9)
+  
+  labels(PLEASE) <- c(
+    "No response"                                   =  0,
+    "Not at all like me"                            =  1,
+    "A little like me"                              =  2,
+    "Somewhat like me"                              =  3,
+    "Mostly like me"                                =  4,
+    "Very much like me"                             =  5,
+    "Missing"                                       =  9)
+  
+  labels(AUTHSI) <- c(
+    "No response"                                   =  0,
+    "Never"                                         =  1,
+    "At least once"                                 =  2,
+    "Missing"                                       =  9)
+  
+  labels(PRESSSI) <- c(
+    "No response"                                   =  0,
+    "Never"                                         =  1,
+    "At least once"                                 =  2,
+    "Missing"                                       =  9)
+  
+  # How are missing values coded?
+  missing.values(RACE) <- c(0, 9)
+  missing.values(NOASSERT) <- c(0, 9)
+  missing.values(PLEASE) <- c(0, 9)
+  missing.values(AUTHSI) <- c(0, 9)
+  missing.values(PRESSSI) <- c(0, 9)
+  
+})
+```
+
+\pagebreak
+
+```{r}
+
+codebook(data_set)
+```
+
+
+
+
+
+
+
